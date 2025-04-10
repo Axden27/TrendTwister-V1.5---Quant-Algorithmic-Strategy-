@@ -1,0 +1,17 @@
+//@version=5
+indicator("RSI + Stochastic Panel", overlay=false)
+
+rsi = ta.rsi(close, 14)
+k1 = ta.stoch(close, high, low, 12)
+k1Smooth = ta.sma(k1, 3)
+k2 = ta.stoch(close, high, low, 5)
+k2Smooth = ta.sma(k2, 3)
+
+plot(rsi, title="RSI", color=color.purple, linewidth=2)
+plot(k1Smooth, title="Stoch %K (12,3,3)", color=color.green)
+plot(k2Smooth, title="Stoch %K (5,3,3)", color=color.fuchsia)
+hline(50, "Midline", color=color.gray, linestyle=hline.style_dashed)
+
+bullishZone = rsi > 50 and k1Smooth > 50 and k2Smooth > 50
+bearishZone = rsi < 50 and k1Smooth < 50 and k2Smooth < 50
+bgcolor(bullishZone ? color.new(color.green, 85) : bearishZone ? color.new(color.red, 85) : na)
