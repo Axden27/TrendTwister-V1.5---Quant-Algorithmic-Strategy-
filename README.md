@@ -59,7 +59,7 @@ It’s designed for traders looking to catch high-probability breakouts with tig
 
 Here’s a demo of the strategy in action on TradingView:
 
-![HullShiftFX Strategy Demo]https://www.tradingview.com/x/kUS2yWmC/
+![TrendTwisterV1.5 Strategy Demo]https://www.tradingview.com/x/kUS2yWmC/
 
 ---
 
